@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -28,10 +29,9 @@ class MyApp extends StatelessWidget {
               Text('Travel Our',
                   style: GoogleFonts.lobster(
                     textStyle: TextStyle(
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 4
-                    ),
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 4),
                   )),
               SizedBox(height: 20),
               SizedBox(

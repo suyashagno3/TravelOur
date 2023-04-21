@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             SizedBox(height: 20),
             Text('Travel Our',
                 style: GoogleFonts.lobster(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       fontSize: 60,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 4),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor:
                       Color.fromRGBO(86, 77, 165, 1), // Background color
                 ),
-                child: Text(
+                child: const Text(
                   'Get Started',
                   style: TextStyle(
                     fontSize: 20,

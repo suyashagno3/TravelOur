@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_our/LoginPage.dart';
 import 'fragments/home.dart';
 import 'fragments/groups.dart';
 import 'fragments/profile.dart';
@@ -42,12 +43,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: const Text('Travel Our'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.login),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+          ),
+        ],
+      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        // Set the background color to green
         onTap: onTabTapped,
         currentIndex: _currentIndex,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -69,7 +85,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               child: Text(
                 'Navigation Drawer',
                 style: TextStyle(fontSize: 24),
@@ -79,43 +95,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-              onTap: () {
-                setState(() {
-                  _currentIndex = 0;
-                  Navigator.pop(context);
-                });
-              },
-            ),
+                leading: Icon(Icons.rate_review),
+                title: Text('Rate Us'),
+                onTap: () {
+                  setState(() {});
+                }),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
+              leading: Icon(Icons.share),
+              title: Text('Share'),
               onTap: () {
-                setState(() {
-                  _currentIndex = 2;
-                  Navigator.pop(context);
-                });
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                setState(() {
-                  _currentIndex = 3;
-                  Navigator.pop(context);
-                });
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.help),
-              title: Text('Help'),
-              onTap: () {
-                setState(() {
-                  _currentIndex = 4;
-                  Navigator.pop(context);
-                });
+                setState(() {});
               },
             ),
           ],
